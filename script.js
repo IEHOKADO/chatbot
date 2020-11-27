@@ -4,18 +4,18 @@ window.onload = function() {
 
 async function run() {
     var path2model = "https://raw.githubusercontent.com/IEHOKADO/chatbot/master/model/model.json";
-    model = await tf.loadLayersModel(path2model);  //グローバル変数
+    model = await tf.loadLayersModel(path2model);
     var path2idx = ["https://raw.githubusercontent.com/IEHOKADO/chatbot/master/json/char2idx.json",
                     "https://raw.githubusercontent.com/IEHOKADO/chatbot/master/json/idx2char.json"];
                     
     var req = new XMLHttpRequest();
     req.open("GET", path2idx[0], false);
     req.send(null);
-    char2idx = JSON.parse(req.responseText);  //グローバル変数
+    char2idx = JSON.parse(req.responseText);
     req = new XMLHttpRequest();
     req.open("GET", path2idx[1], false);
     req.send(null);
-    idx2char = JSON.parse(req.responseText);  //グローバル変数
+    idx2char = JSON.parse(req.responseText);
 }
 
 async function reply() {
@@ -40,12 +40,12 @@ async function predict(text) {
     x = tf.tensor2d([x]);
     probas = await model.predict(x);
     var probas_array = await Array.from(await probas.data());
-    console.log(probas_array);
+    //console.log(probas_array);
     var max_proba = Math.max.apply(null, probas_array);
-    console.log(max_proba);
-    if(max_proba > 0.9) var idx = probas_array.indexOf(max_proba);
+    //console.log(max_proba);
+    if(max_proba > 0.5) var idx = probas_array.indexOf(max_proba);
     else var idx = 0;
-    console.log(idx);
+    //console.log(idx);
     var res = idx2char[idx];
     return res;
 }
