@@ -9,52 +9,50 @@ input[type="submit"] {
 }
 
 html body {
-  background-color: ghostwhite;
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: ghostwhite;
 }
 
 header {
+  text-align: center;
   padding: 30px;
   font-size: 30px;
   font-weight: bold;
   color: grey;
   background-color: white;
-  text-align: center;
   box-shadow: 0 1px 1px grey;
 }
 
 #chatbox {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 800px;
+  margin: 50px auto 0 auto;
 }
 
 #userInput {
   display: flex;
-  margin: 0 auto;
-  position: fixed;
   width: 100%;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  margin: 0 auto;
   background-color: white;
   box-shadow: 0 -1px 1px grey;
 }
 
 #textInput {
+  width: 90%;
   margin: 15px 5px 15px auto;
   padding: 10px;
-  width: 90%;
   font-size: 20px;
   outline: none;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 0 1px grey;
   color: grey;
   background-color: ghostwhite;
+  box-shadow: 0 0 1px grey;
 }
 
 #buttonInput {
@@ -68,10 +66,10 @@ header {
 }
 
 .userText {
-  margin: 10px 0;
-  color: white;
-  font-size: 20px;
   float: right;
+  margin: 10px 0;
+  font-size: 20px;
+  color: white;
   line-height: 30px;
 }
 
@@ -84,19 +82,19 @@ header {
 }
 
 .botText {
-  margin: 10px 0;
-  color: grey;
-  font-size: 20px;
   float: left;
+  margin: 10px 0;
+  font-size: 20px;
+  color: grey;
   line-height: 30px;
 }
 
 .botText span {
-  padding: 10px;
   display: inline-block;
+  padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 1px grey;
   background-color: white;
+  box-shadow: 0 0 1px grey;
 }
 
 .cb {
