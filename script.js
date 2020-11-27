@@ -43,7 +43,7 @@ async function predict(text) {
     //console.log(probas_array);
     var max_proba = Math.max.apply(null, probas_array);
     //console.log(max_proba);
-    if(max_proba > 0.5) var idx = probas_array.indexOf(max_proba);
+    if(max_proba > 0.9) var idx = probas_array.indexOf(max_proba);
     else var idx = 0;
     //console.log(idx);
     var res = idx2char[idx];
@@ -62,4 +62,12 @@ $("#buttonInput").click(function() {
     if (document.getElementById("textInput").value != "") {
         reply();
     }
+})
+
+$("#menu-open").click(function() {
+    $(".menu").fadeIn();
+})
+
+$("#menu-close").click(function() {
+    $(".menu").fadeOut();
 })
